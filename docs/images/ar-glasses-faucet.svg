@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1280" height="720" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ARグラスで混合栓を交換するイメージ">
+<style>
+svg{font-family:'Hiragino Sans','Noto Sans JP','Yu Gothic','Meiryo',sans-serif}
+/* 声のやりとり（12秒で繰り返し） */
+  .b1 { animation: b1 12s infinite; }
+  .b2 { animation: b2 12s infinite; }
+  .b3 { animation: b3 12s infinite; }
+  .okpanel { animation: b3 12s infinite; }
+  @keyframes b1 { 0%,2%{opacity:0} 5%,38%{opacity:1} 42%,100%{opacity:0} }
+  @keyframes b2 { 0%,42%{opacity:0} 45%,58%{opacity:1} 61%,100%{opacity:0} }
+  @keyframes b3 { 0%,61%{opacity:0} 64%,97%{opacity:1} 100%{opacity:0} }
+  .scan { animation: scan 12s infinite; }
+  @keyframes scan { 0%,58%{opacity:0} 59%,63%{opacity:1} 64%,100%{opacity:0} }
+  .pulse { animation: pulse 2s ease-in-out infinite; }
+  @keyframes pulse { 0%,100%{opacity:.55} 50%{opacity:1} }
+</style>
+
+  <defs>
+    <pattern id="tile" width="80" height="80" patternUnits="userSpaceOnUse">
+      <rect width="80" height="80" fill="#eef2f5"/>
+      <rect x="0.5" y="0.5" width="79" height="79" fill="none" stroke="#cfd8df" stroke-width="2"/>
+    </pattern>
+    <linearGradient id="metal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f1f5f9"/><stop offset=".35" stop-color="#cbd5e1"/>
+      <stop offset=".7" stop-color="#94a3b8"/><stop offset="1" stop-color="#64748b"/>
+    </linearGradient>
+    <linearGradient id="counter" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d6c7b0"/><stop offset="1" stop-color="#b9a68a"/>
+    </linearGradient>
+    <radialGradient id="vignette" cx=".5" cy=".5" r=".75">
+      <stop offset=".62" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#020617" stop-opacity=".85"/>
+    </radialGradient>
+    <pattern id="tape" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(-25)">
+      <rect width="10" height="10" fill="#ffffff"/><rect width="2" height="10" fill="#e2e8f0"/>
+    </pattern>
+    <marker id="ah" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/>
+    </marker>
+    <marker id="ahc" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#22d3ee"/>
+    </marker>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="insetClip"><rect x="930" y="96" width="320" height="220" rx="14"/></clipPath>
+  </defs>
+
+  <!-- ===== 現実の景色 ===== -->
+  <rect width="1280" height="720" fill="url(#tile)"/>
+  <!-- 壁の給水口・給湯口（偏心管を外したあと） -->
+  <g>
+    <circle cx="420" cy="250" r="30" fill="#94a3b8"/><circle cx="420" cy="250" r="18" fill="#334155"/>
+    <circle cx="420" cy="250" r="12" fill="#1e293b"/>
+    <circle cx="760" cy="250" r="30" fill="#94a3b8"/><circle cx="760" cy="250" r="18" fill="#334155"/>
+    <circle cx="760" cy="250" r="12" fill="#1e293b"/>
+  </g>
+  <!-- カウンターとシンク -->
+  <rect x="0" y="600" width="1280" height="120" fill="url(#counter)"/>
+  <rect x="0" y="596" width="1280" height="8" fill="#a8957a"/>
+  <!-- カウンターの上の道具 -->
+  <g transform="translate(70,640)">
+    <rect x="0" y="0" width="150" height="16" rx="8" fill="#475569"/>
+    <path d="M150,-10 h34 v14 h-14 v8 h14 v14 h-34 z" fill="#475569"/>
+    <text x="40" y="44" font-size="14" fill="#5b4a33">モンキーレンチ</text>
+  </g>
+  <g transform="translate(1040,620)">
+    <rect x="0" y="0" width="170" height="70" rx="6" fill="#f8fafc" stroke="#cbd5e1"/>
+    <text x="16" y="30" font-size="15" fill="#334155" font-weight="bold">新しい混合栓</text>
+    <text x="16" y="52" font-size="12" fill="#64748b">壁付きシングルレバー</text>
+  </g>
+  <g transform="translate(300,650)">
+    <ellipse cx="40" cy="20" rx="46" ry="16" fill="#60a5fa" opacity=".8"/>
+    <text x="0" y="58" font-size="13" fill="#5b4a33">タオル・バケツ</text>
+  </g>
+
+  <!-- 手と偏心管（手前） -->
+  <g>
+    <!-- 左手（手袋） -->
+    <path d="M300,720 C300,640 330,560 400,540 C430,532 470,540 480,560 C490,585 470,600 450,604 L420,610 C400,650 390,690 392,720 z" fill="#f97316"/>
+    <path d="M410,548 C440,535 470,545 476,565" stroke="#c2410c" stroke-width="4" fill="none"/>
+    <!-- 偏心管（クランク形） -->
+    <path d="M360,520 L560,520 Q590,520 610,495 L630,470 Q640,460 660,460 L800,460" stroke="url(#metal)" stroke-width="40" fill="none" stroke-linecap="butt"/>
+    <path d="M360,510 L560,510 Q585,510 603,488 L624,463 Q634,452 658,452 L800,452" stroke="#ffffff" stroke-width="5" fill="none" opacity=".7"/>
+    <!-- 六角部分 -->
+    <rect x="330" y="494" width="34" height="52" rx="4" fill="#94a3b8" stroke="#64748b" stroke-width="2"/>
+    <rect x="540" y="496" width="22" height="48" rx="3" fill="#a3b0bf" stroke="#64748b" stroke-width="2"/>
+    <!-- ネジ部分 -->
+    <rect x="800" y="442" width="104" height="36" fill="#cbd5e1"/>
+    <g stroke="#64748b" stroke-width="2">
+      <line x1="808" y1="442" x2="802" y2="478"/><line x1="818" y1="442" x2="812" y2="478"/>
+      <line x1="828" y1="442" x2="822" y2="478"/><line x1="838" y1="442" x2="832" y2="478"/>
+      <line x1="848" y1="442" x2="842" y2="478"/><line x1="858" y1="442" x2="852" y2="478"/>
+      <line x1="868" y1="442" x2="862" y2="478"/><line x1="878" y1="442" x2="872" y2="478"/>
+      <line x1="888" y1="442" x2="882" y2="478"/><line x1="898" y1="442" x2="892" y2="478"/>
+    </g>
+    <!-- 巻いたシールテープ（先端1山を残す） -->
+    <rect x="800" y="440" width="84" height="40" rx="3" fill="url(#tape)" opacity=".96"/>
+    <!-- テープの帯（ロールへ） -->
+    <path d="M876,440 C905,400 930,380 960,372" stroke="#ffffff" stroke-width="14" fill="none" opacity=".95"/>
+    <!-- 右手（手袋）とテープのロール -->
+    <path d="M1010,720 C1000,640 990,560 1000,480 C1005,430 960,390 930,395 C905,400 900,430 915,450 L940,470 C950,520 950,600 940,720 z" fill="#f97316"/>
+    <circle cx="968" cy="372" r="30" fill="#ffffff" stroke="#cbd5e1" stroke-width="3"/>
+    <circle cx="968" cy="372" r="12" fill="#e2e8f0" stroke="#94a3b8" stroke-width="3"/>
+  </g>
+
+  <!-- ===== AR表示（重ね表示） ===== -->
+  <g font-family="Hiragino Sans, Noto Sans JP, Yu Gothic, sans-serif">
+
+    <!-- 上の状態バー -->
+    <g>
+      <rect x="40" y="24" width="1200" height="48" rx="24" fill="#052e2b" opacity=".78"/>
+      <circle cx="72" cy="48" r="9" fill="#22c55e" class="pulse"/>
+      <text x="90" y="55" font-size="20" fill="#bbf7d0" font-weight="bold">見守り中</text>
+      <text x="220" y="55" font-size="18" fill="#a7f3d0">止水栓 閉 ✔</text>
+      <text x="360" y="55" font-size="18" fill="#a7f3d0">給湯器 OFF ✔</text>
+      <text x="510" y="55" font-size="18" fill="#a7f3d0">保護手袋 ✔</text>
+      <text x="1040" y="55" font-size="18" fill="#99f6e4">🔊 音声ガイド ON</text>
+    </g>
+
+    <!-- ステップカード -->
+    <g>
+      <rect x="40" y="92" width="400" height="128" rx="16" fill="#0f172a" opacity=".82" stroke="#22d3ee" stroke-opacity=".6"/>
+      <text x="62" y="124" font-size="16" fill="#fdba74">ステップ 8 / 13</text>
+      <text x="62" y="158" font-size="26" fill="#ffffff" font-weight="bold">シールテープを巻く</text>
+      <rect x="62" y="174" width="356" height="8" rx="4" fill="#334155"/>
+      <rect x="62" y="174" width="219" height="8" rx="4" fill="#fb923c"/>
+      <text x="62" y="206" font-size="15" fill="#93c5fd">📄 説明書 5ページ「先端を1山残し、締める向きに巻く」</text>
+    </g>
+
+    <!-- 給水口・給湯口の名札と水平ガイド -->
+    <g>
+      <line x1="420" y1="250" x2="760" y2="250" stroke="#22d3ee" stroke-width="3" stroke-dasharray="10 8" filter="url(#glow)"/>
+      <circle cx="420" cy="250" r="40" fill="none" stroke="#22d3ee" stroke-width="3" filter="url(#glow)"/>
+      <circle cx="760" cy="250" r="40" fill="none" stroke="#22d3ee" stroke-width="3" filter="url(#glow)"/>
+      <rect x="350" y="296" width="140" height="30" rx="8" fill="#0f172a" opacity=".8"/>
+      <text x="420" y="317" font-size="16" fill="#67e8f9" text-anchor="middle">給水口（水）</text>
+      <rect x="690" y="296" width="140" height="30" rx="8" fill="#0f172a" opacity=".8"/>
+      <text x="760" y="317" font-size="16" fill="#fca5a5" text-anchor="middle">給湯口（湯）</text>
+      <rect x="480" y="214" width="220" height="28" rx="8" fill="#0f172a" opacity=".8"/>
+      <text x="590" y="234" font-size="15" fill="#a5f3fc" text-anchor="middle">水平 ✔　取付ピッチ 範囲内 ✔</text>
+    </g>
+
+    <!-- 偏心管の名札 -->
+    <g>
+      <line x1="650" y1="440" x2="610" y2="390" stroke="#22d3ee" stroke-width="2.5"/>
+      <circle cx="650" cy="440" r="5" fill="#22d3ee"/>
+      <rect x="540" y="358" width="110" height="34" rx="9" fill="#0f172a" opacity=".85" stroke="#22d3ee"/>
+      <text x="595" y="382" font-size="18" fill="#a5f3fc" text-anchor="middle" font-weight="bold">偏心管</text>
+    </g>
+
+    <!-- 巻く向きの矢印（ネジのまわりを回る） -->
+    <g filter="url(#glow)">
+      <ellipse cx="842" cy="460" rx="20" ry="46" fill="none" stroke="#fb923c" stroke-width="5" stroke-dasharray="20 12" opacity=".95">
+        <animate attributeName="stroke-dashoffset" from="0" to="-64" dur="1.2s" repeatCount="indefinite"/>
+      </ellipse>
+      <path d="M858,422 A20,46 0 0 1 862,500" fill="none" stroke="#fb923c" stroke-width="6" marker-end="url(#ah)"/>
+    </g>
+    <rect x="770" y="520" width="170" height="54" rx="10" fill="#7c2d12" opacity=".88"/>
+    <text x="855" y="543" font-size="16" fill="#ffedd5" text-anchor="middle" font-weight="bold">締める向きに巻く</text>
+    <text x="855" y="564" font-size="13" fill="#fed7aa" text-anchor="middle">（先端から見て時計回り）</text>
+
+    <!-- 先端1山の印 -->
+    <g>
+      <rect x="884" y="436" width="22" height="48" rx="4" fill="none" stroke="#facc15" stroke-width="3" class="pulse"/>
+      <line x1="895" y1="436" x2="905" y2="400" stroke="#facc15" stroke-width="2.5"/>
+      <rect x="860" y="372" width="96" height="28" rx="8" fill="#0f172a" opacity=".85" stroke="#facc15"/>
+      <text x="908" y="392" font-size="15" fill="#fde68a" text-anchor="middle">先端1山残す</text>
+    </g>
+
+    <!-- 注意パネル -->
+    <g>
+      <rect x="40" y="240" width="270" height="86" rx="14" fill="#713f12" opacity=".9" stroke="#facc15" stroke-width="2"/>
+      <text x="60" y="272" font-size="18" fill="#fde047" font-weight="bold">⚠ 注意</text>
+      <text x="60" y="298" font-size="16" fill="#fef9c3">ねじ込んだあと、</text>
+      <text x="60" y="318" font-size="16" fill="#fef9c3">逆に戻して位置合わせしない</text>
+    </g>
+
+    <!-- 「これで良い？」の確認中スキャン -->
+    <rect class="scan" x="780" y="420" width="140" height="80" fill="none" stroke="#22d3ee" stroke-width="3" stroke-dasharray="6 6"/>
+
+    <!-- OKパネル -->
+    <g class="okpanel">
+      <rect x="40" y="346" width="330" height="96" rx="14" fill="#14532d" opacity=".92" stroke="#4ade80" stroke-width="2"/>
+      <text x="60" y="380" font-size="22" fill="#bbf7d0" font-weight="bold">⭕ 大丈夫です</text>
+      <text x="60" y="406" font-size="15" fill="#dcfce7">巻く向き OK・先端1山残し OK</text>
+      <text x="60" y="428" font-size="15" fill="#dcfce7">巻き数も説明書どおりに見えます</text>
+    </g>
+
+    <!-- 声のやりとり -->
+    <g class="b1">
+      <rect x="300" y="610" width="680" height="56" rx="28" fill="#0f172a" opacity=".88" stroke="#22d3ee"/>
+      <text x="640" y="645" font-size="19" fill="#e0f2fe" text-anchor="middle">🔊 親方「ネジを締める向きに、先端を1山残して巻きます」</text>
+    </g>
+    <g class="b2">
+      <rect x="440" y="610" width="400" height="56" rx="28" fill="#7c2d12" opacity=".9" stroke="#fb923c"/>
+      <text x="640" y="645" font-size="20" fill="#ffedd5" text-anchor="middle">🗣 わたし「これで良い？」</text>
+    </g>
+    <g class="b3">
+      <rect x="240" y="610" width="800" height="56" rx="28" fill="#14532d" opacity=".92" stroke="#4ade80"/>
+      <text x="640" y="645" font-size="19" fill="#dcfce7" text-anchor="middle">🔊 親方「大丈夫です。次は、偏心管を給水口にねじ込みます」</text>
+    </g>
+
+    <!-- 見本アニメーションの小窓 -->
+    <g>
+      <rect x="1000" y="400" width="240" height="180" rx="14" fill="#ffffff" opacity=".93" stroke="#fb923c" stroke-width="3"/>
+      <text x="1016" y="426" font-size="14" fill="#9a3412" font-weight="bold">🎬 見本</text>
+      <rect x="1030" y="478" width="150" height="34" fill="#cbd5e1" stroke="#64748b" stroke-width="2"/>
+      <rect x="1030" y="476" width="0" height="38" fill="url(#tape)" stroke="#94a3b8">
+        <animate attributeName="width" values="0;126;126" keyTimes="0;.8;1" dur="3s" repeatCount="indefinite"/>
+      </rect>
+      <ellipse cx="1110" cy="495" rx="14" ry="30" fill="none" stroke="#fb923c" stroke-width="4" stroke-dasharray="14 8">
+        <animate attributeName="stroke-dashoffset" from="0" to="-44" dur="1s" repeatCount="indefinite"/>
+        <animate attributeName="cx" values="1040;1166;1166" keyTimes="0;.8;1" dur="3s" repeatCount="indefinite"/>
+      </ellipse>
+      <rect x="1158" y="474" width="22" height="42" fill="none" stroke="#facc15" stroke-width="2.5"/>
+      <text x="1120" y="550" font-size="13" fill="#334155" text-anchor="middle">締める向きに 7〜8周</text>
+      <text x="1120" y="568" font-size="12" fill="#64748b" text-anchor="middle">先端1山は巻かない</text>
+    </g>
+  </g>
+
+  <!-- グラスの縁（視界の周辺を暗く） -->
+  <rect width="1280" height="720" fill="url(#vignette)" pointer-events="none"/>
+
+  <!-- ===== 小窓：グラスをかけて作業している女性 ===== -->
+  <g clip-path="url(#insetClip)">
+    <rect x="930" y="96" width="320" height="220" fill="#e0f2fe"/>
+    <!-- 壁のタイル -->
+    <rect x="930" y="96" width="320" height="150" fill="url(#tile)" opacity=".9"/>
+    <!-- シンク台 -->
+    <rect x="930" y="240" width="320" height="76" fill="#d6c7b0"/>
+    <!-- 壁の2つの口 -->
+    <circle cx="1170" cy="170" r="8" fill="#64748b"/><circle cx="1214" cy="170" r="8" fill="#64748b"/>
+    <line x1="1170" y1="170" x2="1214" y2="170" stroke="#22d3ee" stroke-width="2" stroke-dasharray="4 3"/>
+    <!-- 女性（横向き） -->
+    <g transform="translate(1040,120)">
+      <!-- 体・エプロン -->
+      <path d="M-30,200 C-34,140 -24,96 8,88 C40,82 56,110 56,150 L58,200 z" fill="#64748b"/>
+      <path d="M-6,104 L40,100 L44,200 L-4,200 z" fill="#c2410c"/>
+      <!-- 腕 -->
+      <path d="M30,118 C70,120 100,124 118,116" stroke="#64748b" stroke-width="16" stroke-linecap="round" fill="none"/>
+      <circle cx="124" cy="114" r="10" fill="#f97316"/>
+      <!-- 首・頭 -->
+      <rect x="6" y="66" width="16" height="22" fill="#f5c9a8"/>
+      <circle cx="16" cy="44" r="30" fill="#f5c9a8"/>
+      <!-- 髪（後ろでまとめる） -->
+      <path d="M-14,44 C-16,8 18,0 38,14 C44,20 44,26 40,30 C20,24 4,30 -4,58 C-12,58 -14,52 -14,44 z" fill="#1f2937"/>
+      <circle cx="-16" cy="40" r="11" fill="#1f2937"/>
+      <!-- ARグラス -->
+      <rect x="22" y="34" width="26" height="14" rx="5" fill="#0ea5e9" opacity=".75" stroke="#0f172a" stroke-width="2.5"/>
+      <line x1="22" y1="40" x2="-2" y2="38" stroke="#0f172a" stroke-width="3"/>
+      <circle cx="10" cy="38" r="3" fill="#22d3ee" class="pulse"/>
+      <!-- 目線の光線 -->
+      <path d="M48,42 L130,50 L126,62 z" fill="#22d3ee" opacity=".25"/>
+    </g>
+    <!-- 偏心管とAR表示の点 -->
+    <rect x="1150" y="226" width="40" height="8" rx="3" fill="#94a3b8"/>
+    <circle cx="1190" cy="230" r="10" fill="none" stroke="#fb923c" stroke-width="2" class="pulse"/>
+  </g>
+  <rect x="930" y="96" width="320" height="220" rx="14" fill="none" stroke="#e2e8f0" stroke-width="3"/>
+  <rect x="940" y="282" width="200" height="26" rx="8" fill="#0f172a" opacity=".8"/>
+  <text x="1040" y="300" font-size="14" fill="#e2e8f0" text-anchor="middle">グラスをかけて作業中</text>
+</svg>
